@@ -1,0 +1,86 @@
+/* miniprogram/pages/my/usercenter/usercenter.wxss */
+page{
+  background-color: #eeeeee;
+}
+
+.info{
+  background-color: #fff;
+}
+.title{
+  padding: 6px;
+  text-align: center;
+  border-bottom: 1px solid #e6e3e3;
+  font-size: 11pt;
+}
+
+.info .photo{
+  padding: 10px;
+  width:25%;
+  box-sizing: border-box;
+}
+.info .photo image{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.info .mes{
+  box-sizing: border-box;
+  padding-left: 10px;
+  width: 75%;
+}
+.info .mes text.me1{
+  width: 100%;
+  height: 40px;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 40px;
+}
+.info .mes text.me{
+  width: 100%;
+  height: 27px;
+  line-height: 27px;
+  font-size: 14px;
+  color: #b2b2b2;
+}
+
+.list1{
+  margin-top: 20px;
+}
+
+.list1 .fabu view.content{
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  line-height: 50px;
+}
+
+.list1 .fabu view.content .icon1{
+  color:blue;
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.list1 view.items{
+  height: 50px;
+  width: 100%;
+  border-bottom: 1px #eeeeee solid;
+}
+
+.list1 view.items1{
+  height: 158px;
+  width: 100%;
+}
+
+.list1 .guanzhu view.content{
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  line-height: 50px;
+}
+
+.list1 .guanzhu view.content .icon1{
+  color: #f50;
+  font-size: 18px;
+  margin-right: 15px;
+}

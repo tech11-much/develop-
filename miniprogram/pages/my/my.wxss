@@ -1,1 +1,74 @@
 /* miniprogram/pages/my/my.wxss */
+.user .userPhoto{
+  text-align: center;
+  padding-top: 30rpx;
+}
+
+.user .userPhoto image{
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.userInfo text.uName{
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-size: 25pt;
+  font-weight: lighter;
+  color: #353535;
+}
+.userInfo text.uAdress1{
+  display: inline-block;
+  width: 50%;
+  text-align: right;
+  font-size: 10pt;
+  box-sizing: border-box;
+  color: #888;
+}
+.userInfo text.uAdress2{
+  display: inline-block;
+  width: 50%;
+  text-align: left;
+  font-size: 10pt;
+  color: #888;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+
+.userInfo .follow{
+  width: 100%;
+  height: 50px;
+  margin-top: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.userInfo .follow navigator{
+  width: 180px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #3796DE;
+  color: #fff;
+  border-radius: 25px;
+}
+
+.user .login{
+  padding-top: 30rpx;
+}
+.user .login text.loginrd{
+  margin-top: 20rpx;
+  display: inline-block;
+  width: 100%;
+  font-size: 12pt;
+  color: #888;
+  text-align: center;
+}
+
+.user .login button{
+  margin-top: 30rpx;
+  font-weight: normal;
+  border-radius: 50rpx;
+}

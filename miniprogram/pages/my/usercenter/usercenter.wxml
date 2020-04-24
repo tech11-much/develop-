@@ -1,0 +1,70 @@
+<!--miniprogram/pages/my/usercenter/usercenter.wxml-->
+<view class="info clearfix" style=" border-bottom: 1px solid #e6e3e3">
+  <navigator url="userInfo/userInfo" open-type="navigate">
+    <view class="photo fl">
+      <image src="{{userphoto}}" mode="aspectFit"></image>
+    </view>
+    <view class="mes fr">
+      <text class="me1 fl">{{userName}}</text>
+      <text class="me clearfix">
+        <text class="fl">欢迎你，点击修改个人信息</text>
+        <text class="iconfont iconiconfontjiantou4 fr" style="font-size: 8px ;margin-right:12px"></text>
+      </text>
+    </view>
+  </navigator>
+</view>
+
+<view class="list1 layer1">
+  <view class="fabu items">
+    <navigator url="friend/friend" open-type="navigate">
+      <view class="content">
+        <view>
+          <text class="iconfont iconfabu icon1"></text>
+          <text>我的发布</text>
+        </view>
+        <view class="iconfont iconiconfontjiantou4 icon"></view>
+      </view>
+    </navigator>
+  </view>
+
+  <view class="guanzhu items">
+    <navigator url="" open-type="navigate">
+      <view class="content">
+        <view>
+          <text class="iconfont icongz icon1"></text>
+          <text>我的关注</text>
+        </view>
+        <view class="iconfont iconiconfontjiantou4 icon"></view>
+      </view>
+    </navigator>
+  </view>
+</view>
+
+<view class="list1 layer1">
+  <view class="fabu items">
+    <navigator url="friend/friend" open-type="navigate">
+      <view class="content">
+        <view>
+          <text class="iconfont iconguanli icon1" style="color:#FFB400"></text>
+          <text>用户管理</text>
+        </view>
+        <view class="iconfont iconiconfontjiantou4 icon"></view>
+      </view>
+    </navigator>
+  </view>
+</view>
+
+<view class="list1 layer1">
+  <view class="fabu items">
+    <navigator url="friend/friend" open-type="navigate">
+      <view class="content">
+        <view>
+          <text class="iconfont icontuichu icon1" style="color:#45B9B0"></text>
+          <text>退出登录</text>
+        </view>
+        <view class="iconfont iconiconfontjiantou4 icon"></view>
+      </view>
+    </navigator>
+  </view>
+  <view class="items1"></view>
+</view>

@@ -2,7 +2,9 @@
   "pages": [
     "pages/list/list",
     "pages/my/my",
-    "pages/up/up"
+    "pages/up/up",
+    "pages/my/usercenter/usercenter",
+    "pages/my/usercenter/userInfo/userInfo"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -12,23 +14,28 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "list": [{
-      "pagePath": "pages/list/list",
-      "text": "列表",
-      "iconPath":"images/list.png",
-      "selectedIconPath":"images/list.png"
-    }, {
-      "pagePath": "pages/up/up",
-      "text": "发布",
-      "iconPath":"images/up.png",
-      "selectedIconPath":"images/up.png"
-    }
-    , {
-      "pagePath": "pages/my/my",
-      "text": "我",
-      "iconPath":"images/my.png",
-      "selectedIconPath":"images/my.png"
-    }]
+    "color": "#515151",
+    "selectedColor": "#515151",
+    "list": [
+      {
+        "pagePath": "pages/list/list",
+        "text": "首页",
+        "iconPath": "images/tabar/headPage.png",
+        "selectedIconPath": "images/tabar/headPage-sel.png"
+      },
+      {
+        "pagePath": "pages/up/up",
+        "text": "发布",
+        "iconPath": "images/tabar/faBu.png",
+        "selectedIconPath": "images/tabar/faBu-sel.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/tabar/my.png",
+        "selectedIconPath": "images/tabar/my-sel.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"

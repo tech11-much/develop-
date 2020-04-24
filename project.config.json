@@ -45,8 +45,8 @@
 				},
 				{
 					"id": -1,
-					"name": "pages/my/my",
-					"pathName": "pages/my/my",
+					"name": "pages/my/usercenter/usercenter",
+					"pathName": "pages/my/usercenter/usercenter",
 					"scene": null
 				}
 			]

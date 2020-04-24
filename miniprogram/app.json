@@ -30,7 +30,7 @@
         "selectedIconPath": "images/tabar/faBu-sel.png"
       },
       {
-        "pagePath": "pages/my/my",
+        "pagePath": "pages/my/usercenter/usercenter",
         "text": "我的",
         "iconPath": "images/tabar/my.png",
         "selectedIconPath": "images/tabar/my-sel.png"

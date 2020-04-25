@@ -83,4 +83,9 @@ Page({
       });
     }
   },
+  generate(){
+    this.setData({
+      userPhoto: app.userInfo.userPhoto,
+    });
+  }
 })

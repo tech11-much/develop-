@@ -1,0 +1,12 @@
+<!--miniprogram/pages/my/myInfo/myInfo.wxml-->
+<view>
+  <view class = "head">
+   <image mode="aspectFill" src = "{{userPhoto}}"/>
+   <button class = "touXiang" bindtap="handleUploadImage">选择自定义头像</button>
+   <view wx:if ="{{updated}}">
+    <button class = "shangchuan" bindtap = "handleBtn">上传头像</button>
+   </view>
+ </view>
+
+
+</view>

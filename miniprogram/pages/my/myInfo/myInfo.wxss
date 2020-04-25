@@ -1,0 +1,8 @@
+/* miniprogram/pages/my/myInfo/myInfo.wxss */
+.head image{
+  margin-left:330rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}

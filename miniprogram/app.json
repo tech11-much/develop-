@@ -4,7 +4,8 @@
     "pages/my/my",
     "pages/up/up",
     "pages/my/usercenter/usercenter",
-    "pages/my/usercenter/userInfo/userInfo"
+    "pages/my/myInfo/myInfo",
+    "pages/myPublication/myPublication"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

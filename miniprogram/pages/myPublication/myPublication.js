@@ -1,13 +1,11 @@
-// miniprogram/pages/my/usercenter/userInfo/userInfo.js
+// miniprogram/pages/myPublication/myPublication.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userphoto: "/images/my/user-un.png",
-    phoneNumber: '12345678910',
-    locateOn: false,
+
   },
 
   /**

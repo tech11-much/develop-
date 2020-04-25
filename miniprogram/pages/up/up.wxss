@@ -1,1 +1,82 @@
 /* miniprogram/pages/up/up.wxss */
+.layer1 .pic{
+  margin: 4px 0;
+}
+
+.layer1 .pic .remind{
+  text-align: center;
+  color: #b3b3b3;
+  font-size: 10px;
+  padding-bottom: 3px;
+}
+
+.layer1 .pic .tu{
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.layer1 .pic .tu image{
+  height: 140px;
+  width: 100%
+}
+
+.layer1 .pic .buton .cun{
+  width: 120px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #3796DE;
+  color: #fff;
+  font-size: 14px;
+  margin-top: 3px;
+}
+.layer1 .list .item1{
+  width: 100%;
+  height: 30px;
+  padding: 2px 2px;
+  border-bottom: 1px solid #e6e3e3;
+  border-top: 1px solid #e6e3e3;
+  line-height: 30px;
+}
+.layer1 .list .item{
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  padding: 2px 2px;
+  border-bottom: 1px solid #e6e3e3;
+}
+
+.layer1 .list .item .info{
+  width: 27%;
+  display: inline-table;
+}
+.layer1 .list .item .input{
+  width: 73%;
+  display: inline-table;
+  align-items: center;
+}
+.layer1 .list .item .input input{
+  width: 200px;
+}
+
+.layer1 .list .item2 .textarea{
+  margin-top: 2px;
+  padding: 2px 0;
+  height: 70px;
+  width: 100%;
+  border: 1px solid #e6e3e3;
+}
+
+.layer1 .list .btn-area{
+  margin: 10px 0;
+}
+
+.layer1 .list .btn-area button{
+  width: 150px;
+  height: 30px;
+  border-radius: 25px;
+  background-color: #3796DE;
+  color: #fff;
+}

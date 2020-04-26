@@ -1,2 +1,35 @@
 <!--miniprogram/pages/list/list.wxml-->
-<text>miniprogram/pages/list/list.wxml</text>
+<van-search
+  value="{{ value }}"
+  placeholder="请输入搜索关键词"
+  show-action
+  bind:search="onSearch"
+  bind:cancel="onCancel"
+/>
+<view class="page-section page-section-spacing swiper">
+  <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{background}}" wx:key="*this">
+      <swiper-item>
+        <image src="{{item.url}}" class="slide-image" mode="aspectFit"/> 
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<van-tabs active="{{ active }}" color="#5677fc" type="card" >
+  <van-tab title="学习">
+  <block wx:for="{{lists_study}}" wx:key="*this">
+    <van-card
+      num="{{item.num}}"
+      price="{{item.price}}"
+      desc="{{item.desc}}"
+      title="{{item.title}}"
+      thumb="{{item.thumb}}"
+    /></block>
+  </van-tab>
+  <van-tab title="生活">内容 2</van-tab>
+  <van-tab title="娱乐">内容 3</van-tab>
+  <!--van-tab title="标签 4">内容 4</van-tab>
+  <van-tab title="标签 5">内容 5</van-tab>
+  <van-tab title="标签 6">内容 6</van-tab-->
+</van-tabs>

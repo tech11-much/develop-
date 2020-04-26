@@ -9,9 +9,9 @@ Page({
    */
   data: {
     userphoto: "/images/my/user-un.png",
-    userName: "Bruce Mao",
+    userName: "ME",
     userAdress1: "ChengDu",
-    userAdress2: "China",
+    userAdress2: "UESTC",
     logged: true,
     disabled: true,
   },

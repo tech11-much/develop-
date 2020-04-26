@@ -12,4 +12,8 @@
 
 # develop-
 
-partner: Zhenger233
+Partner: 
+
+  tech11-much
+  Zhenger233
+  BruceMao1

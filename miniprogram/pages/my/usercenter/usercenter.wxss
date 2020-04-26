@@ -2,6 +2,66 @@
 page{
   background-color: #eeeeee;
 }
+.userInfoImgAndName {
+    margin-top: 50rpx;
+}
+
+.userInfoBoxBtn {
+    margin-top: 100rpx;
+}
+
+.userInfoGrid {
+    display: flex;
+    justify-content: center;
+    height: 200rpx;
+    width: 100%;
+}
+
+.userInfoBg {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.userInfoTCBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-left: 40rpx;
+    margin-right: 40rpx;
+}
+
+.userInfoIco {
+    width: 70rpx;
+}
+
+.userInfoText {
+    font-size: 28rpx;
+    color: #495060;
+}
+
+.listBox {
+    width: 100%;
+    height: 100%;
+    margin-left: 10rpx;
+}
+.thePage {
+    display: flex;
+    flex-direction: column;
+}
+
+.userInfoBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 300rpx;
+    width: 100%;
+}
 
 .info{
   background-color: #fff;
@@ -84,3 +144,24 @@ page{
   font-size: 18px;
   margin-right: 15px;
 }
+.userInfo{
+  height:300rpx;
+  margin-top: 0px;
+  /* border:1rpx grey solid; */
+  border-left: none;
+  border-right: none;
+  display:flex;
+  align-items: center;
+  }
+
+.userInfo image{
+  margin-left:10rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  }
+.userInfo text{
+  margin-left:50rpx;
+  color: rgb(140, 140, 146);
+  }

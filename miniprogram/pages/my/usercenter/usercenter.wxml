@@ -1,22 +1,22 @@
 <!--miniprogram/pages/my/usercenter/usercenter.wxml-->
-<view class="info clearfix" style=" border-bottom: 1px solid #e6e3e3">
-  <navigator url="userInfo/userInfo" open-type="navigate">
-    <view class="photo fl">
-      <image src="{{userphoto}}" mode="aspectFit"></image>
-    </view>
-    <view class="mes fr">
-      <text class="me1 fl">{{userName}}</text>
-      <text class="me clearfix">
-        <text class="fl">欢迎你，点击修改个人信息</text>
-        <text class="iconfont iconiconfontjiantou4 fr" style="font-size: 8px ;margin-right:12px"></text>
-      </text>
-    </view>
-  </navigator>
-</view>
 
-<view class="list1 layer1">
+<view class="thePage">
+    <view class="userInfoBox">
+        <label>
+            <view wx:if="{{isHide}}">
+                <button bindgetuserinfo="getUserInfoClick" class="userInfoBoxBtn" openType="getUserInfo" size="mini" type="primary">点击授权登录</button>
+            </view>
+            <view bindtap="generate" class = "userInfo" wx:if="{{!isHide}}">
+                <image mode="aspectFill" src="{{userPhoto}}"/>
+    <text wx:if="{{!isHide}}">欢迎您：{{nickName}}</text>
+            </view>
+        </label>
+    </view>
+</view>
+<view wx:if = "{{!isHide}}">
+  <view class="list1 layer1">
   <view class="fabu items">
-    <navigator url="friend/friend" open-type="navigate">
+    <navigator url="/pages/myPublication/myPublication" open-type="navigate">
       <view class="content">
         <view>
           <text class="iconfont iconfabu icon1"></text>
@@ -42,11 +42,11 @@
 
 <view class="list1 layer1">
   <view class="fabu items">
-    <navigator url="friend/friend" open-type="navigate">
+    <navigator url="/pages/my/myInfo/myInfo" open-type="navigate">
       <view class="content">
         <view>
           <text class="iconfont iconguanli icon1" style="color:#FFB400"></text>
-          <text>用户管理</text>
+          <text>个人信息管理</text>
         </view>
         <view class="iconfont iconiconfontjiantou4 icon"></view>
       </view>
@@ -67,4 +67,5 @@
     </navigator>
   </view>
   <view class="items1"></view>
+</view>
 </view>

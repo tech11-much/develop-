@@ -4,7 +4,8 @@
     "pages/my/my",
     "pages/up/up",
     "pages/my/usercenter/usercenter",
-    "pages/my/usercenter/userInfo/userInfo"
+    "pages/my/myInfo/myInfo",
+    "pages/myPublication/myPublication"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -30,13 +31,12 @@
         "selectedIconPath": "images/tabar/faBu-sel.png"
       },
       {
-        "pagePath": "pages/my/my",
+        "pagePath": "pages/my/usercenter/usercenter",
         "text": "我的",
         "iconPath": "images/tabar/my.png",
         "selectedIconPath": "images/tabar/my-sel.png"
       }
     ]
   },
-  "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "sitemapLocation": "sitemap.json"
 }

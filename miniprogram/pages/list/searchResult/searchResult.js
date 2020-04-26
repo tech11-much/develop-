@@ -1,5 +1,4 @@
-// miniprogram/pages/list/list.js
-//const testImgUrl="https://7a7a-zz-11c835-1257008454.tcb.qcloud.la/gray.png";
+// pages/list/searchResult/searchResult.js
 const testImgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg";
 Page({
 
@@ -7,10 +6,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    background: [
-      {url:testImgUrl} ,  
-      {url:testImgUrl}
-    ],
     lists_study:[
       {
         num:1,
@@ -63,56 +58,7 @@ Page({
       }
     ]
   },
-
-  onSearch(){
-    console.log("search");
-  },
-  onCancel() {
-    console.log("search");
-  },
-  onClick() {
-    console.log("search");
-  },
-  changeIndicatorDots() {
-    this.setData({
-      indicatorDots: !this.data.indicatorDots
-    })
-  },
-
-  changeAutoplay() {
-    this.setData({
-      autoplay: !this.data.autoplay
-    })
-  },
-
-  intervalChange(e) {
-    this.setData({
-      interval: e.detail.value
-    })
-  },
-
-  durationChange(e) {
-    this.setData({
-      duration: e.detail.value
-    })
-      wx.navigateTo({
-      url: 'searchResult/searchResult?id=1',
-      events: {
-        // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
-        acceptDataFromOpenedPage: function(data) {
-          console.log(data)
-        },
-        someEvent: function(data) {
-          console.log(data)
-        }
-      },
-      success: function(res) {
-        // 通过eventChannel向被打开页面传送数据
-        res.eventChannel.emit('acceptDataFromOpenerPage', { data: 'test' })
-      }
-    })
-  },
-
+  
   /**
    * 生命周期函数--监听页面加载
    */

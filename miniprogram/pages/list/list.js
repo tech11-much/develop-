@@ -70,7 +70,12 @@ Page({
   onSearch(){
     console.log("search");
   },
-
+  onCancel() {
+    console.log("search");
+  },
+  onClick() {
+    console.log("search");
+  },
   changeIndicatorDots() {
     this.setData({
       indicatorDots: !this.data.indicatorDots

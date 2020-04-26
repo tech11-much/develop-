@@ -8,7 +8,8 @@ Page({
    */
   data: {
     userPhoto: '',
-    updated: false
+    updated: false,
+    nickName: ''
   },
 
   /**
@@ -16,7 +17,8 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      userPhoto: app.userInfo.userPhoto
+      userPhoto: app.userInfo.userPhoto,
+      nickName: app.userInfo.nickName
     });
   },
 
@@ -112,5 +114,30 @@ Page({
         });
       }
     });
-  }  
+  },
+  handleText(ev) {
+    let value = ev.detail.value;
+    this.setData({
+      nickName: value
+    });
+  },  
+  handleBtnName(ev) {
+    this.updatenickName();
+  },
+  updatenickName() {
+    wx.showLoading({
+      title: '更新中'
+    })
+    db.collection('user').doc(app.userInfo._id).update({
+      data: {
+        nickName: this.data.nickName
+      }
+    }).then((res) => {
+      wx.hideLoading();
+      wx.showToast({
+        title: '更新成功'
+      });
+      app.userInfo.nickName = this.data.nickName;
+    });
+  },
 })

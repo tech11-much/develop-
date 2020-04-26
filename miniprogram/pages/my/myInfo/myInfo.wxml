@@ -10,3 +10,7 @@
 
 
 </view>
+<view>
+  <input class = "shuRu" type = "text" value = "{{nickName}}" bindinput = "handleText"/>
+  <button class = "niCheng" bindtap="handleBtnName">更新昵称</button>
+</view>

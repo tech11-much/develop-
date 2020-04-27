@@ -7,6 +7,7 @@
   padding: 0 80rpx;
 }
 .slide-img{
+  display: block;
   width:100%
 }
 .line_white{

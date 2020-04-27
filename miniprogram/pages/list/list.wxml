@@ -6,11 +6,11 @@
 
 <view>
   <swiper  indicator-dots="true" style="width:100%">
-    <view wx:for="{{background}}" wx:key="*this">
+    <block wx:for="{{background}}" wx:key="*this">
       <swiper-item>
-        <image  src="{{item.url}}" class="slide-img" mode="widthFix"/> 
+        <image bindtap="toDetail" src="{{item.url}}" class="slide-img" mode="widthFix"/> 
       </swiper-item>
-    </view>
+    </block>
   </swiper>
 </view>
 
@@ -19,6 +19,8 @@
   <van-tab title="学习">
   <view class="card-list" wx:for="{{lists_study}}" wx:key="*this" >
     <van-card
+      bindtap="toDetail"
+      data-id="{{item.id}}"
       num="{{item.num}}"
       price="{{item.price}}"
       desc="{{item.desc}}"

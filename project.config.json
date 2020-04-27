@@ -50,14 +50,8 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": -1,
 			"list": [
-				{
-					"id": -1,
-					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide",
-					"query": ""
-				},
 				{
 					"id": -1,
 					"name": "pages/my/my",
@@ -76,12 +70,21 @@
 					"id": -1,
 					"name": "pages/my/myInfo/myInfo",
 					"pathName": "pages/my/myInfo/myInfo",
+					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
 					"name": "pages/list/list",
 					"pathName": "pages/list/list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/list/detail/detail",
+					"pathName": "pages/list/detail/detail",
+					"query": "id=1",
 					"scene": null
 				}
 			]

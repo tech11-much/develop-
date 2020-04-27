@@ -1,0 +1,8 @@
+/* pages/list/detail/detail.wxss */
+.img{
+  width: 100%;
+}
+.imagesize{
+  display:flex;
+  justify-content: center;
+ }

@@ -17,55 +17,88 @@ Page({
         price:"1",
         desc:"描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息",
         title:"商品标题",
-        thumb:testImgUrl
+        thumb:testImgUrl,
+        id:1
       },{
         num:2,
         price:"2",
         desc:"描述信息描述信息",
         title:"商品标题商品标题",
-        thumb:testImgUrl
+        thumb:testImgUrl,
+        id:2
       },{
         num:2,
         price:"2",
         desc:"描述信息描述信息",
         title:"商品标题商品标题",
-        thumb:testImgUrl
+        thumb:testImgUrl,
+        id:3
       },{
         num:2,
         price:"2",
         desc:"描述信息描述信息",
         title:"商品标题商品标题",
-        thumb:testImgUrl
+        thumb:testImgUrl,
+        id:4
       },{
         num:2,
         price:"2",
         desc:"描述信息描述信息",
         title:"商品标题商品标题",
-        thumb:testImgUrl
+        thumb:testImgUrl,
+        id:5
       },{
         num:2,
         price:"2",
         desc:"描述信息描述信息",
         title:"商品标题商品标题",
-        thumb:'https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg'
+        thumb:'https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg',
+        id:6
       },{
         num:2,
         price:"2",
         desc:"描述信息描述信息",
         title:"商品标题商品标题",
-        thumb:'https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg'
+        thumb:'https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg',
+        id:7
       },{
         num:2,
         price:"2",
         desc:"描述信息描述信息",
         title:"商品标题商品标题",
-        thumb:'https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg'
+        thumb:'https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg',
+        id:8
       }
     ]
   },
 
   onSearch(){
     console.log("search");
+    wx.navigateTo({ 
+      url: 'searchResult/searchResult?id=1', 
+      events: { 
+        // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据 
+        acceptDataFromOpenedPage: function(data) { 
+          console.log(data) 
+        }, 
+        someEvent: function(data) { 
+          console.log(data) 
+        } 
+      }, 
+      success: function(res) { 
+        // 通过eventChannel向被打开页面传送数据 
+        res.eventChannel.emit('acceptDataFromOpenerPage', { data: 'test' }) 
+      } 
+    });
+  },
+  toDetail(e){
+    // console.log(e);
+    // console.log(this);
+    console.log("toDetail");
+    let id=e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: './detail/detail?id='+id,
+    })
   },
   onCancel() {
     console.log("search");

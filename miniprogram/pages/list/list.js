@@ -1,5 +1,7 @@
 // miniprogram/pages/list/list.js
 //const testImgUrl="https://7a7a-zz-11c835-1257008454.tcb.qcloud.la/gray.png";
+const db = wx.cloud.database()
+const app = getApp()
 const testImgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg";
 Page({
 
@@ -11,65 +13,7 @@ Page({
       {url:testImgUrl} ,  
       {url:testImgUrl}
     ],
-    lists_study:[
-      {
-        num:1,
-        price:"1",
-        desc:"描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息",
-        title:"商品标题",
-        thumb:testImgUrl,
-        id:1
-      },{
-        num:2,
-        price:"2",
-        desc:"描述信息描述信息",
-        title:"商品标题商品标题",
-        thumb:testImgUrl,
-        id:2
-      },{
-        num:2,
-        price:"2",
-        desc:"描述信息描述信息",
-        title:"商品标题商品标题",
-        thumb:testImgUrl,
-        id:3
-      },{
-        num:2,
-        price:"2",
-        desc:"描述信息描述信息",
-        title:"商品标题商品标题",
-        thumb:testImgUrl,
-        id:4
-      },{
-        num:2,
-        price:"2",
-        desc:"描述信息描述信息",
-        title:"商品标题商品标题",
-        thumb:testImgUrl,
-        id:5
-      },{
-        num:2,
-        price:"2",
-        desc:"描述信息描述信息",
-        title:"商品标题商品标题",
-        thumb:'https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg',
-        id:6
-      },{
-        num:2,
-        price:"2",
-        desc:"描述信息描述信息",
-        title:"商品标题商品标题",
-        thumb:'https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg',
-        id:7
-      },{
-        num:2,
-        price:"2",
-        desc:"描述信息描述信息",
-        title:"商品标题商品标题",
-        thumb:'https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg',
-        id:8
-      }
-    ]
+    lists_study:[]
   },
 
   onSearch(){
@@ -150,7 +94,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getListData();
   },
 
   /**
@@ -200,5 +144,19 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  getListData() {
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'getData',
+    })
+      .then(res => {
+        console.log(res);
+        this.setData({
+          lists_study: res.result.data
+        });
+      })
+      .catch(console.error)
+    
+  },
 })

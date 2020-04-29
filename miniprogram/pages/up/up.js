@@ -110,7 +110,10 @@ Page({
           productName: e.detail.value.productName,
           productPrice: e.detail.value.productPrice,
           productType: e.detail.value.productType,
-          userphoto : ''
+          weixinNumber:e.detail.value.weixinNumber,
+          qqNumber:e.detail.value.qqNumber,
+          userphoto : '',
+          
         }
       }).then((res) => {
         console.log(res);

@@ -6,7 +6,7 @@
 
 <view>
   <swiper  indicator-dots="true" style="width:100%">
-    <block wx:for="{{background}}" wx:key="*this">
+    <block wx:for="{{background}}" wx:key="index">
       <swiper-item>
         <image bindtap="toDetail" src="{{item.url}}" class="slide-img" mode="widthFix"/> 
       </swiper-item>
@@ -17,17 +17,18 @@
 <!-- <view class="line_white"></view> -->
 <van-tabs active="{{ active }}" color="#5677fc" type="line" style="width:100% margin:0">
   <van-tab title="学习">
-  <view class="card-list" wx:for="{{lists_study}}" wx:key="*this" >
-    <van-card
-      bindtap="toDetail"
-      data-id="{{item.id}}"
-      num="{{item.num}}"
-      price="{{item.price}}"
-      desc="{{item.desc}}"
-      title="{{item.title}}"
-      thumb="{{item.thumb}}"
-      thumb-mode="scaletoFill"
-    /></view>
+  <view class="card-list" wx:for="{{lists_study}}" wx:key="index" >
+    <view wx:if ="{{item.productType==0}}">
+      <van-card
+        bindtap="toDetail"
+        data-id="{{item.id}}"
+        price="{{item.productPrice}}"
+        desc="{{item.productMore}}"
+        title="{{item.productName}}"
+        thumb="{{item.userphoto}}"
+        thumb-mode="scaletoFill"
+      /></view>
+    </view>
   </van-tab>
   <van-tab title="生活">内容 2</van-tab>
   <van-tab title="娱乐">内容 3</van-tab>

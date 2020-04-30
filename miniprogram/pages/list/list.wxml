@@ -30,7 +30,7 @@
       /></view>
     </view>
   </van-tab>
-  <van-tab title="生活">内容 2</van-tab>
+  <van-tab title="生活" bindtap="test">内容 2</van-tab>
   <van-tab title="娱乐">内容 3</van-tab>
   <!-- <van-tab title="标签 4">内容 4</van-tab>
   <van-tab title="标签 5">内容 5</van-tab>

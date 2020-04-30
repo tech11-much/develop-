@@ -138,6 +138,19 @@ Page({
   onReachBottom: function () {
 
   },
+  test(){
+    console.log("test");
+    wx.startPullDownRefresh();
+    wx.stopPullDownRefresh();
+  },
+  onPullDownRefresh(){
+    console.log('refresh');
+    this.setData({
+      lists_study:[]
+    });
+    this.getListData();
+    wx.stopPullDownRefresh();
+  },
 
   /**
    * 用户点击右上角分享

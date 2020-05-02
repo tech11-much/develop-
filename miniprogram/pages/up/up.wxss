@@ -85,6 +85,7 @@
   height: 30px;
   line-height: 30px;
   border-radius: 25px;
+  margin-left: 200rpx;
   background-color: #3796DE;
   color: #fff;
 }

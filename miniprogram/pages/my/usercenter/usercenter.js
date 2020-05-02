@@ -52,6 +52,12 @@ Page({
 
     });
   },
+  onShow : function(){
+    this.setData({
+      userPhoto: app.userInfo.userPhoto,
+      nickName: app.userInfo.nickName,
+    });
+  },
 
   
   getUserInfoClick: function getUserInfoClick(ev) {

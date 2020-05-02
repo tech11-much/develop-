@@ -6,3 +6,15 @@
   border-radius: 50%;
   overflow: hidden;
 }
+.shuRu{
+  color :black;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  border: 1px grey solid;
+}
+/* .niCheng{
+  height: 65rpx;
+  color:grey;
+  border:1px grey solid;
+  margin-bottom: 10rpx;
+} */

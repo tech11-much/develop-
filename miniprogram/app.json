@@ -1,9 +1,11 @@
 {
   "pages": [
+    "pages/my/usercenter/usercenter",
     "pages/list/list",
+    "pages/list/detail/detail",
+    "pages/list/searchResult/searchResult",
     "pages/my/my",
     "pages/up/up",
-    "pages/my/usercenter/usercenter",
     "pages/my/myInfo/myInfo",
     "pages/myPublication/myPublication"
   ],
@@ -37,6 +39,12 @@
         "selectedIconPath": "images/tabar/my-sel.png"
       }
     ]
+  },
+  "usingComponents": {
+    "van-search": "./miniprogram_npm/vant-weapp/search/index",
+    "van-tab": "./miniprogram_npm/vant-weapp/tab/index",
+    "van-tabs": "./miniprogram_npm/vant-weapp/tabs/index",
+    "van-card": "./miniprogram_npm/vant-weapp/card/index"
   },
   "sitemapLocation": "sitemap.json"
 }

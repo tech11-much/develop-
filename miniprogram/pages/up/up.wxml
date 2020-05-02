@@ -5,15 +5,12 @@
     <view class="tu">
       <image bindtap="handleUpdateImage" src="{{userphoto}}" mode="aspectFit"></image>
     </view>
-    <view class="buton">
-      <button disabled="{{disabled}}" class="cun" bindtap="handleBtn">保存图片</button>
-    </view>
   </view>
 
   <view class="list">
     <form bindsubmit="formSubmit" bindreset="formReset">
       <view class="item1">
-        <view class="seller">发布方： {{userName}}</view>
+        <view class="seller">发布方： {{nickName}}</view>
       </view>
       <view class="item">
         <view class="info">商品名称：</view>
@@ -38,6 +35,21 @@
           <input class="weui-input" auto-focus placeholder="请输入商品价格" name="productPrice"/>
         </view>
       </view>
+
+       <view class="item">
+        <view class="info">qq号码：</view>
+        <view class="input">
+          <input class="weui-input" auto-focus placeholder="请输入qq号码" name="qqNumber"/>
+        </view>
+      </view>
+
+      <view class="item">
+        <view class="info">微信号码：</view>
+        <view class="input">
+          <input class="weui-input" auto-focus placeholder="请输入微信号码" name="weixinNumber"/>
+        </view>
+      </view>
+
 
       <view class="item2">
         <view class="textarea">

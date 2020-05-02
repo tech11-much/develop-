@@ -1,0 +1,15 @@
+<!--pages/list/detail/detail.wxml-->
+<view class="imagesize">
+  <image class="img" src="{{thumb}}" mode="widthFix"></image>
+</view>
+<view>
+  <text>
+    {{desc}}
+  </text>
+</view>
+<view>
+  <text>
+    QQ:{{qq}}
+    微信:{{weixin}}
+  </text>
+</view>

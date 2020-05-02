@@ -1,4 +1,6 @@
 // miniprogram/pages/up/up.js
+const db = wx.cloud.database()
+const app = getApp()
 Page({
 
   /**
@@ -6,7 +8,9 @@ Page({
    */
   data: {
     userphoto : '/images/up/addPic.png',
-    userName : '天天打游戏',
+    nickName : '我的昵称',
+    goodsName : " ",
+    goodsPrice : '',
     disabled : true,
     array: ['学习', '娱乐', '生活'],
     objectArray: [
@@ -24,29 +28,34 @@ Page({
       }
     ],
     index: 0,
+    _id : "",
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      index: this.data.index,
+      nickName: app.userInfo.nickName
+    });
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.setData({
-      index : this.index,
-    });
+   
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      index: this.data.index,
+      nickName: app.userInfo.nickName
+    });
   },
 
   /**
@@ -92,6 +101,53 @@ Page({
   },
 
   formSubmit: function (e) {
+    wx.cloud.callFunction({
+      name: 'addGoods',
+      data: {}
+    }).then((res) => {
+      //console.log(res);
+      db.collection('goods').add({
+        data : {
+          _openid : res.result._openid,
+          productMore: e.detail.value.productMore,
+          productName: e.detail.value.productName,
+          productPrice: e.detail.value.productPrice,
+          productType: e.detail.value.productType,
+          weixinNumber:e.detail.value.weixinNumber,
+          qqNumber:e.detail.value.qqNumber,
+          userphoto : '',
+          
+        }
+      }).then((res) => {
+        console.log(res);
+        this.setData({
+          _id : res._id,
+        });
+        let cloudPath = 'userphoto/' + app.userInfo._openid + Date.now() + '.jpg';
+        wx.cloud.uploadFile({
+          cloudPath: cloudPath,
+          filePath: this.data.userphoto, // 文件路径
+        }).then((res) => {
+          
+          //console.log(res);
+          let fileID = res.fileID;
+          if (fileID) {
+            db.collection('goods').doc(this.data._id).update({
+              data: {
+                userphoto: fileID
+              }
+            }).then((res) => {
+              wx.showToast({
+                title: '发布成功'
+              });
+            });
+          }
+        });
+
+      });
+
+    });
+    
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
   },
 

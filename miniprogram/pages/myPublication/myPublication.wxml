@@ -1,2 +1,10 @@
 <!--miniprogram/pages/myPublication/myPublication.wxml-->
-<text>miniprogram/pages/myPublication/myPublication.wxml</text>
+<view>点击删除发布</view>
+
+<view class="card-list" wx:for="{{goodsMine}}" wx:key="index" >
+      <view>
+        {{item.productName}}
+        {{item.productPrice}}
+      </view>
+      <button id = "{{item._id}}" bindtap = "deleteGoods"> 删除已发布 </button>
+</view>

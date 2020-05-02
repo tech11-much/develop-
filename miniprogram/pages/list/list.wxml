@@ -15,9 +15,9 @@
 </view>
 
 <!-- <view class="line_white"></view> -->
-<van-tabs active="{{ active }}" color="#5677fc" type="line" style="width:100% margin:0">
+<van-tabs color="#5677fc" type="line" style="width:100% margin:0">
   <van-tab title="学习">
-  <view class="card-list" wx:for="{{lists_study}}" wx:key="index" >
+  <view class="card-list" wx:for="{{lists_show}}" wx:key="index" >
     <view wx:if ="{{item.productType==0}}">
       <van-card
         bindtap="toDetail"
@@ -35,7 +35,7 @@
     <view wx:if ="{{item.productType==1}}">
       <van-card
         bindtap="toDetail"
-        data-id="{{item.id}}"
+        data-id="{{item._id}}"
         price="{{item.productPrice}}"
         desc="{{item.productMore}}"
         title="{{item.productName}}"
@@ -49,7 +49,7 @@
     <view wx:if ="{{item.productType==2}}">
       <van-card
         bindtap="toDetail"
-        data-id="{{item.id}}"
+        data-id="{{item._id}}"
         price="{{item.productPrice}}"
         desc="{{item.productMore}}"
         title="{{item.productName}}"
@@ -58,7 +58,4 @@
       /></view>
     </view>
   </van-tab>
-  <!-- <van-tab title="标签 4">内容 4</van-tab>
-  <van-tab title="标签 5">内容 5</van-tab>
-  <van-tab title="标签 6">内容 6</van-tab> -->
 </van-tabs>

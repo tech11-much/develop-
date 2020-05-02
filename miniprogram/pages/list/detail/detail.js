@@ -33,7 +33,7 @@ Page({
       weixinNumber : true
     })
       .get().then(res => {
-        console.log(res);
+        console.log(res)
         this.setData({
           thumb: res.data.userphoto,
           name: res.data.productName,

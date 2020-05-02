@@ -2,21 +2,26 @@
 //const testImgUrl="https://7a7a-zz-11c835-1257008454.tcb.qcloud.la/gray.png";
 const db = wx.cloud.database()
 const app = getApp()
-const testImgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg";
+const testImgUrl = "https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg";
+const onePageNumber=10;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    background: [
-      {url:testImgUrl} ,  
-      {url:testImgUrl}
+    background: [{
+        url: testImgUrl
+      },{
+        url: testImgUrl
+      }
     ],
-    lists_study:[]
+    lists_study: [],
+    lists_show: [],
+    pageNumber: 10
   },
 
-  onSearch(){
+  onSearch() {
     console.log("search");
     wx.navigateTo({ 
       url: 'searchResult/searchResult?id=1', 
@@ -73,21 +78,33 @@ Page({
     this.setData({
       duration: e.detail.value
     })
-      wx.navigateTo({
+
+    wx.navigateTo({
       url: 'searchResult/searchResult?id=1',
       events: {
-        // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
-        acceptDataFromOpenedPage: function(data) {
+        // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据 
+        acceptDataFromOpenedPage: function (data) {
           console.log(data)
         },
-        someEvent: function(data) {
+        someEvent: function (data) {
           console.log(data)
         }
       },
-      success: function(res) {
-        // 通过eventChannel向被打开页面传送数据
-        res.eventChannel.emit('acceptDataFromOpenerPage', { data: 'test' })
+      success: function (res) {
+        // 通过eventChannel向被打开页面传送数据 
+        res.eventChannel.emit('acceptDataFromOpenerPage', {
+          data: 'test'
+        })
       }
+    });
+  },
+  toDetail(e) {
+    // console.log(e);
+    // console.log(this);
+    console.log(e.currentTarget.id);
+    let id = e.currentTarget.id;
+    wx.navigateTo({
+      url: './detail/detail?id=' + id,
     })
   },
 
@@ -95,6 +112,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.getListData();
     
   },
 
@@ -130,16 +148,41 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    console.log('refresh');
+    this.setData({
+      lists_study: [],
+      lists_show:[]
+    });
+    this.getListData();
+    wx.stopPullDownRefresh();
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    
-  },
 
+    
+
+    this.getNewPage();
+  },
+  test() {
+    console.log("test");
+    // wx.startPullDownRefresh();
+    // wx.stopPullDownRefresh();
+    this.setData({
+      // lists_show: this.data.lists_show + this.data.lists_study.slice(this.data.pageNumber, this.data.pageNumber + 10),
+      lists_show:this.data.lists_study.slice(0, this.data.pageNumber),
+      pageNumber:this.data.pageNumber+onePageNumber
+    });
+  },
+  getNewPage() {
+    console.log("上拉刷新获取更多列表");
+    this.setData({
+      lists_show:this.data.lists_study.slice(0, this.data.pageNumber),
+      pageNumber:this.data.pageNumber+onePageNumber
+    });
+  },
   /**
    * 用户点击右上角分享
    */
@@ -148,16 +191,17 @@ Page({
   },
   getListData() {
     wx.cloud.callFunction({
-      // 云函数名称
-      name: 'getData',
-    })
+        // 云函数名称
+        name: 'getData',
+      })
       .then(res => {
         console.log(res);
         this.setData({
-          lists_study: res.result.data
+          lists_study: res.result.data,
+          lists_show:res.result.data.slice(0,onePageNumber-1)
         });
       })
-      .catch(console.error)
-    
+      .catch(console.error);
+    console.log("刷新列表");
   },
 })

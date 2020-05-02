@@ -35,24 +35,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      index: this.data.index,
+      nickName: app.userInfo.nickName
+    });
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.setData({
-      index : this.data.index,
-      nickName: app.userInfo.nickName
-    });
+   
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      index: this.data.index,
+      nickName: app.userInfo.nickName
+    });
   },
 
   /**
@@ -134,12 +137,9 @@ Page({
                 userphoto: fileID
               }
             }).then((res) => {
-              wx.hideLoading();
               wx.showToast({
                 title: '发布成功'
               });
-              wx.hideLoading();
-              this.data.userphoto = fileID
             });
           }
         });

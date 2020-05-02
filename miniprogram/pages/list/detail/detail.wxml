@@ -10,6 +10,6 @@
 <view>
   <text>
     QQ:{{qq}}
-    微信:{{wx}}
+    微信:{{weixin}}
   </text>
 </view>

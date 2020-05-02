@@ -35,14 +35,15 @@ Page({
       } 
     });
   },
-  toDetail(e){
-    // console.log(e);
-    // console.log(this);
-    console.log("toDetail");
-    let id=e.currentTarget.dataset.id;
+  toDetail(event){
+    console.log(event);
+   // console.log(e);
+
+    var id = event.currentTarget.id
+
     wx.navigateTo({
-      url: './detail/detail?id='+id,
-    })
+      url: './detail/detail?id=' + id ,
+  })
   },
   onCancel() {
     console.log("search");
@@ -94,7 +95,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getListData();
+    
   },
 
   /**
@@ -108,7 +109,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getListData();
   },
 
   /**
@@ -136,7 +137,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    
   },
 
   /**

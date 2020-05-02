@@ -21,6 +21,20 @@
     <view wx:if ="{{item.productType==0}}">
       <van-card
         bindtap="toDetail"
+        id="{{item._id}}"
+        price="{{item.productPrice}}"
+        desc="{{item.productMore}}"
+        title="{{item.productName}}"
+        thumb="{{item.userphoto}}"
+        thumb-mode="scaletoFill"
+      /></view>
+    </view>
+  </van-tab>
+  <van-tab title="生活">
+  <view class="card-list" wx:for="{{lists_study}}" wx:key="index" >
+    <view wx:if ="{{item.productType==1}}">
+      <van-card
+        bindtap="toDetail"
         data-id="{{item.id}}"
         price="{{item.productPrice}}"
         desc="{{item.productMore}}"
@@ -30,8 +44,20 @@
       /></view>
     </view>
   </van-tab>
-  <van-tab title="生活">内容 2</van-tab>
-  <van-tab title="娱乐">内容 3</van-tab>
+  <van-tab title="娱乐">
+  <view class="card-list" wx:for="{{lists_study}}" wx:key="index" >
+    <view wx:if ="{{item.productType==2}}">
+      <van-card
+        bindtap="toDetail"
+        data-id="{{item.id}}"
+        price="{{item.productPrice}}"
+        desc="{{item.productMore}}"
+        title="{{item.productName}}"
+        thumb="{{item.userphoto}}"
+        thumb-mode="scaletoFill"
+      /></view>
+    </view>
+  </van-tab>
   <!-- <van-tab title="标签 4">内容 4</van-tab>
   <van-tab title="标签 5">内容 5</van-tab>
   <van-tab title="标签 6">内容 6</van-tab> -->

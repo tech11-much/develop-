@@ -10,7 +10,8 @@ exports.main = async (event, context) => {
     productPrice: true,
     productMore: true,
     productName: true,
-    productType: true
+    productType: true,
+    _id : true,
   })
     .get()
 }

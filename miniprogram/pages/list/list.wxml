@@ -13,7 +13,6 @@
     </block>
   </swiper>
 </view>
-
 <!-- <view class="line_white"></view> -->
 <van-tabs color="#5677fc" type="line" style="width:100% margin:0">
   <van-tab title="学习">

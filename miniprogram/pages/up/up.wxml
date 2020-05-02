@@ -1,4 +1,5 @@
 <!--miniprogram/pages/up/up.wxml-->
+<button bindtap="test">测试按钮添加记录</button>
 <view class="layer1">
   <view class="pic">
     <view class="remind">点击下方插入图片</view>

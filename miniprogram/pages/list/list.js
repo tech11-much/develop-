@@ -168,13 +168,6 @@ Page({
   },
   test() {
     console.log("test");
-    // wx.startPullDownRefresh();
-    // wx.stopPullDownRefresh();
-    this.setData({
-      // lists_show: this.data.lists_show + this.data.lists_study.slice(this.data.pageNumber, this.data.pageNumber + 10),
-      lists_show:this.data.lists_study.slice(0, this.data.pageNumber),
-      pageNumber:this.data.pageNumber+onePageNumber
-    });
   },
   getNewPage() {
     console.log("上拉刷新获取更多列表");

@@ -47,7 +47,10 @@ Page({
       }
     ],
     index: 0,
-    _id: ""
+    _id: "",
+    qqNumber : '',
+    weixinNumber : '',
+    productMore : ''
   },
 
   /**
@@ -75,7 +78,9 @@ Page({
   onShow: function () {
     this.setData({
       index: this.data.index,
-      nickName: app.userInfo.nickName
+      nickName: app.userInfo.nickName,
+      qqNumber: app.userInfo.qqNumber,
+      weixinNumber: app.userInfo.weixinNumber
     });
   },
 
@@ -124,7 +129,7 @@ Page({
       name: 'addGoods',
       data: {}
     }).then((res) => {
-      //console.log(res);
+      console.log(res);
       db.collection('goods').add({
         data: {
           _openid: res.result._openid,
@@ -169,54 +174,54 @@ Page({
 
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
   },
-  test() {
-    console.log("test");
-    db.collection('goods').count().then(resu => {
-      console.log('total:', resu.total);
-      wx.cloud.callFunction({
-        name: 'addGoods',
-        data: {}
-      }).then((res) => {
-        //console.log(res);
-        db.collection('goods').add({
-          data: {
-            _openid: res.result._openid,
-            productMore: '这是第' + resu.total + '条记录' + this.randChar("", this.randNum(2, 30)),
-            productName: this.randChar("zh", this.randNum(1, 10)),
-            productPrice: (Math.random() * 1000).toFixed(2),
-            productType: this.randNum(0, 2),
-            weixinNumber: this.randChar("wx", this.randNum(1, 18)),
-            qqNumber: this.randChar("qq", this.randNum(6, 11)),
-            userphoto: testImgSet[this.randNum(0, 18)],
-          }
-        }).then((res) => {
-          console.log(res);
-        });
-      });
-    });
-  },
-  randChar(type, num) {
-    var s = "";
-    while (num--) {
-      switch (type) {
-        case "zh":
-          s += String.fromCodePoint(Math.round(Math.random() * 20901) + 19968);
-          break;
-        case "wx":
-          s += String.fromCodePoint(Math.round(Math.random() * 25) + 65);
-        case "qq":
-          s += String.fromCodePoint(Math.round(Math.random() * 9) + 48);
-          break;
-        default:
-          s += String.fromCodePoint(Math.round(Math.random() * 10000) + 32);
-          break;
-      }
-    };
-    return s;
-  },
-  randNum(a, b) {
-    return Math.round(Math.random() * (b - a)) + a;
-  },
+  // test() {
+  //   console.log("test");
+  //   db.collection('goods').count().then(resu => {
+  //     console.log('total:', resu.total);
+  //     wx.cloud.callFunction({
+  //       name: 'addGoods',
+  //       data: {}
+  //     }).then((res) => {
+  //       //console.log(res);
+  //       db.collection('goods').add({
+  //         data: {
+  //           _openid: res.result._openid,
+  //           productMore: '这是第' + resu.total + '条记录' + this.randChar("", this.randNum(2, 30)),
+  //           productName: this.randChar("zh", this.randNum(1, 10)),
+  //           productPrice: (Math.random() * 1000).toFixed(2),
+  //           productType: this.randNum(0, 2),
+  //           weixinNumber: this.randChar("wx", this.randNum(1, 18)),
+  //           qqNumber: this.randChar("qq", this.randNum(6, 11)),
+  //           userphoto: testImgSet[this.randNum(0, 18)],
+  //         }
+  //       }).then((res) => {
+  //         console.log(res);
+  //       });
+  //     });
+  //   });
+  // },
+  // randChar(type, num) {
+  //   var s = "";
+  //   while (num--) {
+  //     switch (type) {
+  //       case "zh":
+  //         s += String.fromCodePoint(Math.round(Math.random() * 20901) + 19968);
+  //         break;
+  //       case "wx":
+  //         s += String.fromCodePoint(Math.round(Math.random() * 25) + 65);
+  //       case "qq":
+  //         s += String.fromCodePoint(Math.round(Math.random() * 9) + 48);
+  //         break;
+  //       default:
+  //         s += String.fromCodePoint(Math.round(Math.random() * 10000) + 32);
+  //         break;
+  //     }
+  //   };
+  //   return s;
+  // },
+  // randNum(a, b) {
+  //   return Math.round(Math.random() * (b - a)) + a;
+  // },
 
   handleUpdateImage() {
     wx.chooseImage({

@@ -7,7 +7,8 @@
     "pages/my/my",
     "pages/up/up",
     "pages/my/myInfo/myInfo",
-    "pages/myPublication/myPublication"
+    "pages/myPublication/myPublication",
+    "pages/aboutUs/aboutUs"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

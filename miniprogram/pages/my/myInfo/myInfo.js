@@ -9,7 +9,10 @@ Page({
   data: {
     userPhoto: '',
     updated: false,
-    nickName: ''
+    nickName: '',
+    qqNumber : '',
+    weixinNumber : '',
+    phoneNumber : ''
   },
 
   /**
@@ -18,7 +21,9 @@ Page({
   onLoad: function (options) {
     this.setData({
       userPhoto: app.userInfo.userPhoto,
-      nickName: app.userInfo.nickName
+      nickName: app.userInfo.nickName,
+      qqNumber: app.userInfo.qqNumber,
+      weixinNumber : app.userInfo.weixinNumber
     });
   },
 
@@ -138,6 +143,59 @@ Page({
         title: '更新成功'
       });
       app.userInfo.nickName = this.data.nickName;
+    });
+  },
+  handleQq(ev) {
+    let value = ev.detail.value;
+    this.setData({
+      qqNumber : value
+    });
+  },
+  handleWeixin(ev) {
+    let value = ev.detail.value;
+    this.setData({
+      weixinNumber: value
+    });
+  },
+  handleBtnName(ev) {
+    this.updatenickName();
+  },
+  handleBtnQq(ev) {
+    this.updateQq();
+  },
+  handleBtnWeixin(ev) {
+    this.updateWeixin();
+  },
+  updateQq() {
+    wx.showLoading({
+      title: '更新中'
+    })
+    db.collection('user').doc(app.userInfo._id).update({
+      data: {
+        qqNumber : this.data.qqNumber
+      }
+    }).then((res) => {
+      wx.hideLoading();
+      wx.showToast({
+        title: '更新成功'
+      });
+      app.userInfo.qqNumber = this.data.qqNumber;
+    });
+  },
+  updateWeixin() {
+    wx.showLoading({
+      title: '更新中'
+    })
+    db.collection('user').doc(app.userInfo._id).update({
+      data: {
+        weixinNumber: this.data.weixinNumber
+      }
+    }).then((res) => {
+      wx.hideLoading();
+      wx.showToast({
+        title: '更新成功'
+      });
+      app.userInfo.weixinNumber = this.data.weixinNumber;
     });
   },
 })

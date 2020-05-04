@@ -56,7 +56,9 @@ Page({
   onLoad: function (options) {
     this.setData({
       index: this.data.index,
-      nickName: app.userInfo.nickName
+      nickName: app.userInfo.nickName,
+      qqNumber : app.userInfo.qqNumber,
+      weixinNumber : app.userInfo.weixinNumber
     });
   },
 

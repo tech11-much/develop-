@@ -40,14 +40,14 @@
        <view class="item">
         <view class="info">qq号码：</view>
         <view class="input">
-          <input class="weui-input" auto-focus placeholder="请输入qq号码" name="qqNumber"/>
+          <input class="weui-input" value = "{{app.userInfo.qqNumber}}" auto-focus placeholder="{{qqNumber}}" name="qqNumber"/>
         </view>
       </view>
 
       <view class="item">
         <view class="info">微信号码：</view>
         <view class="input">
-          <input class="weui-input" auto-focus placeholder="请输入微信号码" name="weixinNumber"/>
+          <input class="weui-input" value = "{{app.userInfo.weixinNumber}}" auto-focus placeholder="{{weixinNumber}}" name="weixinNumber"/>
         </view>
       </view>
 

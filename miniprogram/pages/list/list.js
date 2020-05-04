@@ -112,7 +112,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getListData();
+    this.getListAll();
     
   },
 
@@ -127,7 +127,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getListData();
+    //this.getListData();
   },
 
   /**
@@ -153,7 +153,7 @@ Page({
       lists_study: [],
       lists_show:[]
     });
-    this.getListData();
+    this.getListAll();
     wx.stopPullDownRefresh();
   },
 
@@ -197,4 +197,21 @@ Page({
       .catch(console.error);
     console.log("刷新列表");
   },
+  getListAll(){
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'getallData',
+    })
+      .then(res => {
+        console.log(res.result.data.length);
+        for (var i = 0, j = res.result.data.length-1; i < res.result.data.length;i++,j--){
+          this.data.lists_show[j] = res.result.data[i];
+        }
+        this.setData({
+          lists_study: this.data.lists_show,
+        });
+      })
+      .catch(console.error)
+    
+  }
 })

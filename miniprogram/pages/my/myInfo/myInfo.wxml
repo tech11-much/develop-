@@ -14,3 +14,10 @@
   <input class = "shuRu" type = "text" value = "{{nickName}}" bindinput = "handleText"/>
   <button class = "niCheng" bindtap="handleBtnName">更新昵称</button>
 </view>
+<view>
+  <input class = "shuRu" type = "text" value = "{{qqNumber}}" bindinput = "handleQq"/>
+  <button class = "niCheng" bindtap="handleBtnQq">更新qq</button>
+</view><view>
+  <input class = "shuRu" type = "text" value = "{{weixinNumber}}" bindinput = "handleWeixin"/>
+  <button class = "niCheng" bindtap="handleBtnWeixin">更新Weixin</button>
+</view>

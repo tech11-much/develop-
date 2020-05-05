@@ -1,0 +1,10 @@
+<!--miniprogram/pages/my/myInfo/changenickname/changenickname.wxml-->
+<view class="name layer">
+  <input class="weui-input" type="number" value="{{nickname}}" maxlength="11" placeholder="nikename" bindinput="handleText"/>
+  <view class="click">
+    <view>一个好的名字让他人更容易记住你</view>
+    <view class="cun">
+      <button disabled="{{disabled}}" bindtap="handleBtn">保存</button>
+    </view>
+  </view>
+</view>

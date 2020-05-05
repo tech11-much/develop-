@@ -32,4 +32,5 @@ view,text,button,navigator{
 .icon{
   font-size: 9px;
   color: #b2b2b2;
+  display: inline-block;
 }

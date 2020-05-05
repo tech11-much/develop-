@@ -1,0 +1,10 @@
+<!--miniprogram/pages/my/myInfo/changeQQ/changeQQ.wxml-->
+<view class="name layer">
+  <input class="weui-input" type="number" value="{{QQ}}" maxlength="11" placeholder="QQNumber" bindinput="handleText"/>
+  <view class="click">
+    <view>正确填写QQ号方便与他人更好地交流</view>
+    <view class="cun">
+      <button disabled="{{disabled}}" bindtap="handleBtn">保存</button>
+    </view>
+  </view>
+</view>

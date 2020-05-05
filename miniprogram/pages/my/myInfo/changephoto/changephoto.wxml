@@ -1,0 +1,9 @@
+<!--miniprogram/pages/my/myInfo/changephoto/changephoto.wxml-->
+<view class="layer part1">
+  <view class="txt">点击下方头像替换</view>
+  <image bindtap="handleUpdateImage" src="/images/example.jpg" mode="aspectFit"></image>
+  <view>
+    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">使用微信头像</button>
+    <button disabled="{{disabled}}" class="cun" bindtap="handleBtn">保存头像</button>
+  </view>
+</view>

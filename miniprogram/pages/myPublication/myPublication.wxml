@@ -1,10 +1,25 @@
 <!--miniprogram/pages/myPublication/myPublication.wxml-->
-<view>点击删除发布</view>
+<view class="frlist layer1">
+  <view class="itemTitle">
+    点击 <text class="iconfont iconshanchu" style="color:#D81E06;"></text> 即可删除发布
+  </view>
 
-<view class="card-list" wx:for="{{goodsMine}}" wx:key="index" >
-      <view>
-        {{item.productName}}
-        {{item.productPrice}}
+  <view class="list">
+    <view class="items clearfix" wx:for="1" wx:key="index" >
+      <view class="fl p1">
+        <navigator>
+          <image src="/images/example.jpg" mode="aspectFit"></image>
+        </navigator>
       </view>
-      <button id = "{{item._id}}" bindtap = "deleteGoods"> 删除已发布 </button>
+      <view class="fr p2">
+        <view class="txt">
+          <view class="t1">生化危机2重置版</view>
+          <view class="t2 iconfont iconjiage">99</view>
+        </view>
+        <view class="zancon">
+          <navigator class="iconfont iconshanchu zan" data-id="{{item._id}}" bindtap="deleteGoods" hover="true" hover-class="zanhover"></navigator>
+        </view>
+      </view>
+    </view>
+  </view>
 </view>

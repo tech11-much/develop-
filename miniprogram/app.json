@@ -9,7 +9,11 @@
     "pages/my/myInfo/myInfo",
     "pages/myPublication/myPublication",
     "pages/aboutUs/aboutUs",
-    "components/copytext/copytext"
+    "components/copytext/copytext",
+    "pages/my/myInfo/changephoto/changephoto",
+    "pages/my/myInfo/changeweixin/changeweixin",
+    "pages/my/myInfo/changenickname/changenickname",
+    "pages/my/myInfo/changeQQ/changeQQ"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

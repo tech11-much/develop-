@@ -1,0 +1,27 @@
+/* miniprogram/pages/my/myInfo/changephoto/changephoto.wxss */
+page{
+  background-color: #eeeeee;
+}
+.part1{
+  text-align: center;
+}
+.part1 .txt{
+  margin-top: 14px;
+  color: #c5c4c4;
+  font-size: 14px;
+}
+.part1 image{
+  width: 150px;
+  height: 150px;
+  border-radius: 30px;
+  margin: 30px;
+  margin-top: 14px;
+}
+.part1 view .cun{
+  margin-top: 20px;
+}
+.part1 button{
+  border-radius: 20px;
+  color: #fff;
+  background-color: rgb(55, 248, 97);
+}

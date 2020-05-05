@@ -1,23 +1,36 @@
 <!--miniprogram/pages/my/myInfo/myInfo.wxml-->
-<view>
-  <view class = "head">
-   <image mode="aspectFill" src = "{{userPhoto}}"/>
-   <button class = "touXiang" bindtap="handleUploadImage">选择自定义头像</button>
-   <view wx:if ="{{updated}}">
-    <button class = "shangchuan" bindtap = "handleBtn">上传头像</button>
-   </view>
- </view>
-
-
-</view>
-<view>
-  <input class = "shuRu" type = "text" value = "{{nickName}}" bindinput = "handleText"/>
-  <button class = "niCheng" bindtap="handleBtnName">更新昵称</button>
-</view>
-<view>
-  <input class = "shuRu" type = "text" value = "{{qqNumber}}" bindinput = "handleQq"/>
-  <button class = "niCheng" bindtap="handleBtnQq">更新qq</button>
-</view><view>
-  <input class = "shuRu" type = "text" value = "{{weixinNumber}}" bindinput = "handleWeixin"/>
-  <button class = "niCheng" bindtap="handleBtnWeixin">更新Weixin</button>
+<view class="part1 layer1">
+  <navigator class="item1" url="changephoto/changephoto" open-type="navigate">
+    <view class="txtl">
+      <text class="iconfont iconwode2" style="color:#5BBAFC; margin-right:10px;"></text>头像
+    </view>
+    <view class="txtr1">
+      <view class="img"><image src="/images/example.jpg" mode="aspectFit"></image></view>
+      <view class="icon iconfont iconiconfontjiantou4" style="width:10px"></view>
+    </view>
+  </navigator>
+  <navigator class="item" url="changenickname/changenickname" open-type="navigate">
+    <view class="txtl">
+      <text class="iconfont iconnicheng" style="color:#FC595A; margin-right:10px;"></text>昵称
+    </view>
+    <view class="txtr2">Bruce
+      <text class="icon iconfont iconiconfontjiantou4" style="margin-left:5px;"></text>
+    </view>
+  </navigator>
+  <navigator class="item" url="changeweixin/changeweixin" open-type="navigate">
+    <view class="txtl">
+      <text class="iconfont iconweixin" style="color:#73C051; margin-right:10px;"></text>微信号
+    </view>
+    <view class="txtr2">tyu23132
+      <text class="icon iconfont iconiconfontjiantou4" style="margin-left:5px;"></text>
+    </view>
+  </navigator>
+  <navigator class="item" url="changeQQ/changeQQ" open-type="navigate">
+    <view class="txtl">
+      <text class="iconfont iconVector" style="color:#FE2F5B; margin-right:10px;"></text>QQ号
+    </view>
+    <view class="txtr2">12345456456
+      <text class="icon iconfont iconiconfontjiantou4" style="margin-left:5px;"></text>
+    </view>
+  </navigator>
 </view>

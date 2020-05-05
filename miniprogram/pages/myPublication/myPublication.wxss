@@ -1,1 +1,68 @@
 /* miniprogram/pages/myPublication/myPublication.wxss */
+.frlist .itemTitle{
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-bottom: 1px #eee solid;
+  }
+
+  .frlist .list .items{
+    height: 54px;
+    line-height: 54px;
+    box-sizing: border-box;
+  }
+
+  .frlist .list .items .p1{
+    height: 50px;
+    line-height: 50px;
+    width: 20%;
+  }
+  .frlist .list .items .p1 navigator image{
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    margin-top: 4px;
+  }
+
+  .frlist .list .items .p2{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom:1px #eee solid;
+  }
+
+.frlist .list .items .p2 .txt {
+  display: flex;
+}
+  .frlist .list .items .p2 .txt .t1{
+    display: inline-block;
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .frlist .list .items .p2 .txt .t2{
+    display: inline-block;
+    color: #FF4444;
+    margin-left: 1px;
+  }
+
+  .frlist .list .items .p2 .zancon{
+    height: 20px;
+    display: inline-block;
+  }
+  .frlist .list .items .p2 .zan{
+    display: inline-block;
+    margin: 0 10px;
+    background-color: #fff;
+    color: #D81E06;
+    font-size: 16px;
+    text-align: center;
+    height: 18px;
+  }
+
+  .frlist .list .items .p2 .zanhover{
+    color: #b2b2b2;
+    margin-top: 2px;
+  }

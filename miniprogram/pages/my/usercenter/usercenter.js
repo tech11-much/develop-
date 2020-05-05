@@ -70,6 +70,7 @@ Page({
           nickName: userInfo.nickName,
           phoneNumber: '',
           weixinNumber: '',
+          qqNumber : '',
           time: new Date(),
           isLocation: true,
           longitude: this.latitude,
@@ -83,7 +84,6 @@ Page({
             userPhoto: app.userInfo.userPhoto,
             nickName: app.userInfo.nickName,
             isHide: false
-
           });
         });
       });

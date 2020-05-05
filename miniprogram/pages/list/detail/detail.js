@@ -14,7 +14,10 @@ Page({
     title: "",
     thumb: '',
     id: 1,
-    _id : ''
+    _id : '',
+    _openid : '',
+    userName : '',
+    userPhoto : '',
   },
 
   /**
@@ -29,29 +32,37 @@ Page({
       productMore: true,
       productName: true,
       productType: true,
+      _openid : true,
       qqNumber : true,
       weixinNumber : true
     })
       .get().then(res => {
-        console.log(res)
         this.setData({
           thumb: res.data.userphoto,
           name: res.data.productName,
-          qq: res.data.qqNumber,
-          weixin: res.data.weixinNumber,
           price: res.data.productPrice,
-          desc: res.data.productMore
+          desc: res.data.productMore,
+          _openid: res.data._openid,
+          qq : res.data.qqNumber,
+          weixin : res.data.weixinNumber
         });
+        console.log(res.data._openid)
+        
+        
+        
       })
       .catch(console.error)
+      console.log(this.data._openid)
+    
+
   },
+  
   
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**

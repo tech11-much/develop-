@@ -1,5 +1,7 @@
 // pages/list/searchResult/searchResult.js
 const testImgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg";
+const db = wx.cloud.database()
+const app = getApp()
 Page({
 
   /**
@@ -7,56 +9,33 @@ Page({
    */
   data: {
     lists_study:[
-      {
-        num:1,
-        price:"1",
-        desc:"描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息",
-        title:"商品标题",
-        thumb:testImgUrl
-      },{
-        num:2,
-        price:"2",
-        desc:"描述信息描述信息",
-        title:"商品标题商品标题",
-        thumb:testImgUrl
-      },{
-        num:2,
-        price:"2",
-        desc:"描述信息描述信息",
-        title:"商品标题商品标题",
-        thumb:testImgUrl
-      },{
-        num:2,
-        price:"2",
-        desc:"描述信息描述信息",
-        title:"商品标题商品标题",
-        thumb:testImgUrl
-      },{
-        num:2,
-        price:"2",
-        desc:"描述信息描述信息",
-        title:"商品标题商品标题",
-        thumb:testImgUrl
-      },{
-        num:2,
-        price:"2",
-        desc:"描述信息描述信息",
-        title:"商品标题商品标题",
-        thumb:'https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg'
-      },{
-        num:2,
-        price:"2",
-        desc:"描述信息描述信息",
-        title:"商品标题商品标题",
-        thumb:'https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg'
-      },{
-        num:2,
-        price:"2",
-        desc:"描述信息描述信息",
-        title:"商品标题商品标题",
-        thumb:'https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg'
-      }
-    ]
+      
+    ],
+    search : ''
+  },
+  getSearchData: function (e) {
+    this.data.search = e.detail.value,
+      console.log(e),
+      console.log(this.data.search)
+    //监听输入框内容
+  },
+  SearchTranslate: function (e) {
+    var i = this.data.search   //获取输入框输入内容
+      db.collection('goods')
+        .where({
+          productName: db.RegExp({
+            regexp: i,
+            //从搜索栏中获取的value作为规则进行匹配。
+            options: 'i',
+            //大小写不区分
+          })    //匹配输入内容
+        })
+        .get().then( res => {
+            this.setData({
+              lists_study : res.data
+            })
+            
+        } )          
   },
   
   /**
@@ -113,5 +92,6 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
 })

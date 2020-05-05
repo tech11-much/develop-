@@ -29,6 +29,7 @@
 	"libVersion": "2.11.0",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -91,6 +92,13 @@
 					"id": -1,
 					"name": "pages/my/usercenter/usercenter",
 					"pathName": "pages/my/usercenter/usercenter",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/list/searchResult/searchResult",
+					"pathName": "pages/list/searchResult/searchResult",
 					"scene": null
 				}
 			]

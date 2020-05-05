@@ -1,4 +1,5 @@
 <!--miniprogram/pages/up/up.wxml-->
+<button bindtap="test">测试按钮添加记录</button>
 <view class="layer1">
   <view class="pic">
     <view class="remind">点击下方插入图片</view>
@@ -39,14 +40,14 @@
        <view class="item">
         <view class="info">qq号码：</view>
         <view class="input">
-          <input class="weui-input" auto-focus placeholder="请输入qq号码" name="qqNumber"/>
+          <input class="weui-input" value = "{{qqNumber}}" auto-focus placeholder="{{qqNumber}}" name="qqNumber"/>
         </view>
       </view>
 
       <view class="item">
         <view class="info">微信号码：</view>
         <view class="input">
-          <input class="weui-input" auto-focus placeholder="请输入微信号码" name="weixinNumber"/>
+          <input class="weui-input" value = "{{weixinNumber}}" auto-focus placeholder="{{weixinNumber}}" name="weixinNumber"/>
         </view>
       </view>
 
@@ -58,7 +59,7 @@
       </view>
 
       <view class="btn-area">
-        <button formType="submit">发布商品</button>
+        <button formType="submit" >发布商品</button>
       </view>
 
     </form>

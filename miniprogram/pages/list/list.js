@@ -112,7 +112,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getListData();
+    this.getListAll();
     
   },
 
@@ -127,7 +127,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getListData();
+    //this.getListData();
   },
 
   /**
@@ -153,7 +153,7 @@ Page({
       lists_study: [],
       lists_show:[]
     });
-    this.getListData();
+    this.getListAll();
     wx.stopPullDownRefresh();
   },
 
@@ -168,13 +168,6 @@ Page({
   },
   test() {
     console.log("test");
-    // wx.startPullDownRefresh();
-    // wx.stopPullDownRefresh();
-    this.setData({
-      // lists_show: this.data.lists_show + this.data.lists_study.slice(this.data.pageNumber, this.data.pageNumber + 10),
-      lists_show:this.data.lists_study.slice(0, this.data.pageNumber),
-      pageNumber:this.data.pageNumber+onePageNumber
-    });
   },
   getNewPage() {
     console.log("上拉刷新获取更多列表");
@@ -204,4 +197,21 @@ Page({
       .catch(console.error);
     console.log("刷新列表");
   },
+  getListAll(){
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'getallData',
+    })
+      .then(res => {
+        console.log(res.result.data.length);
+        for (var i = 0, j = res.result.data.length-1; i < res.result.data.length;i++,j--){
+          this.data.lists_show[j] = res.result.data[i];
+        }
+        this.setData({
+          lists_study: this.data.lists_show,
+        });
+      })
+      .catch(console.error)
+    
+  }
 })

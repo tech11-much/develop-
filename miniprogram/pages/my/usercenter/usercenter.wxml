@@ -27,17 +27,7 @@
     </navigator>
   </view>
 
-  <view class="guanzhu items">
-    <navigator url="" open-type="navigate">
-      <view class="content">
-        <view>
-          <text class="iconfont icongz icon1"></text>
-          <text>我的关注</text>
-        </view>
-        <view class="iconfont iconiconfontjiantou4 icon"></view>
-      </view>
-    </navigator>
-  </view>
+  
 </view>
 
 <view class="list1 layer1">
@@ -56,11 +46,11 @@
 
 <view class="list1 layer1">
   <view class="fabu items">
-    <navigator url="friend/friend" open-type="navigate">
+    <navigator url="/pages/aboutUs/aboutUs" open-type="navigate">
       <view class="content">
         <view>
           <text class="iconfont icontuichu icon1" style="color:#45B9B0"></text>
-          <text>退出登录</text>
+          <text>关于轮播图</text>
         </view>
         <view class="iconfont iconiconfontjiantou4 icon"></view>
       </view>

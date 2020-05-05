@@ -1,18 +1,5 @@
-<!--pages/list/searchResult/searchResult.wxml-->
-<van-search
-  focus="true"
-  value="{{ value }}"
-  placeholder="请输入搜索关键词"
-  show-action
-  bind:search="onSearch"
-  bind:cancel="onCancel"
-/>
-<view class="card-list" wx:for="{{lists_study}}" wx:key="*this" >
-    <van-card
-      num="{{item.num}}"
-      price="{{item.price}}"
-      desc="{{item.desc}}"
-      title="{{item.title}}"
-      thumb="{{item.thumb}}"
-      thumb-mode="scaletoFill"
-    /></view>
+<input confirm-type="search" bindinput="getSearchData" placeholder="请输入商品名称" value=""/>
+    <button bindtap="SearchTranslate"><icon type="search"/></button>
+  <block wx:for="{{lists_study}}" wx:key="index">
+      <text>{{item.productName}}</text>   
+  </block>

@@ -1,5 +1,24 @@
-<input confirm-type="search" bindinput="getSearchData" placeholder="请输入商品名称" value=""/>
-    <button bindtap="SearchTranslate"><icon type="search"/></button>
-  <block wx:for="{{lists_study}}" wx:key="index">
+<!-- <input confirm-type="search" bindinput="getSearchData" placeholder="请输入商品名称" value=""/>
+    <button bindtap="SearchTranslate"><icon type="search"/></button> -->
+<van-search
+  value="{{ value }}"
+  placeholder="请输入搜索关键词"
+  show-action
+  bind:search="onSearch"
+  bind:cancel="onCancel"
+  focus="true"
+/>
+  <!-- <block wx:for="{{lists_study}}" wx:key="index">
       <text>{{item.productName}}</text>   
-  </block>
+  </block> -->
+<view class="card-list" wx:for="{{lists_study}}" wx:key="index" >
+    <van-card
+        bindtap="toDetail"
+        id="{{item._id}}"
+        price="{{item.productPrice}}"
+        desc="{{item.productMore}}"
+        title="{{item.productName}}"
+        thumb="{{item.userphoto}}"
+        thumb-mode="scaletoFill"
+    />
+</view>

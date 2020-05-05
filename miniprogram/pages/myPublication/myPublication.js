@@ -27,17 +27,16 @@ Page({
       name: 'login',
       data: {}
     }).then((res) => {
-      //console.log(res);
-      db.collection('goods').where({
-        _openid: res.result.openid
-      }).field({
-        productName: true,
-        _id: true,
-        productPrice: true
-      }).get().then((res) => {
+      console.log(res);
+      wx.cloud.callFunction({
+        name: 'getMine',
+        data: {
+          openid : res.result.openid
+        }
+      }).then((res) => {
         console.log(res)
         this.setData({
-          goodsMine: res.data
+          goodsMine: res.result.data
         });
       });
     });
@@ -68,7 +67,25 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    wx.cloud.callFunction({
+      name: 'login',
+      data: {}
+    }).then((res) => {
+      //console.log(res);
+      db.collection('goods').where({
+        _openid: res.result.openid
+      }).field({
+        productName: true,
+        _id: true,
+        productPrice: true
+      }).get().then((res) => {
+        console.log(res)
+        this.setData({
+          goodsMine: res.data
+        });
+      });
+    });
+    wx.stopPullDownRefresh();
   },
 
   /**

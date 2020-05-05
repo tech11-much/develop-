@@ -54,7 +54,7 @@
 
       <view class="item2">
         <view class="textarea">
-          <textarea auto-focus="true" style="height: 42px;font-size:14px;" placeholder="在这里输入详细信息" name="productMore"/>
+          <textarea style="height: 42px;font-size:14px;" placeholder="在这里输入详细信息" name="productMore"/>
         </view>
       </view>
 

@@ -1,23 +1,23 @@
 <!--miniprogram/pages/my/my.wxml-->
 <view class="user layer">
-  <view wx:if="{{logged}}" class="userInfo">
-    <view class="userPhoto">
-    <image src="{{userphoto}}" mode="aspectFit"></image>
-    </view>
-    <text class="uName">{{userName}}</text>
-    <text class="uAdress1">{{userAdress1}}</text>
-    <text class="uAdress2">{{userAdress2}}</text>
-    <view class="follow">
-      <navigator url="usercenter/usercenter" open-type="navigate">
-        <text>Follows</text>
-      </navigator>
-    </view>
-  </view>
-  <view class="login layer" wx:else>
-    <view class="userPhoto">
-    <image src="{{userphoto}}" mode="aspectFit"></image>
-    </view>
-    <text class="loginrd">请点击登录</text>
-    <button disabled="{{disabled}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">Login</button>
-  </view>
+	<view wx:if="{{logged}}" class="userInfo">
+		<view class="userPhoto">
+			<image src="{{userphoto}}" mode="aspectFit"></image>
+		</view>
+		<text class="uName">{{userName}}</text>
+		<text class="uAdress1">{{userAdress1}}</text>
+		<text class="uAdress2">{{userAdress2}}</text>
+		<view class="follow">
+			<navigator url="usercenter/usercenter" open-type="navigate">
+				<text>Follows</text>
+			</navigator>
+		</view>
+	</view>
+	<view class="login layer" wx:else>
+		<view class="userPhoto">
+			<image src="{{userphoto}}" mode="aspectFit"></image>
+		</view>
+		<text class="loginrd">请点击登录</text>
+		<button disabled="{{disabled}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">Login</button>
+	</view>
 </view>

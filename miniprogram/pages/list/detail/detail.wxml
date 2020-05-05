@@ -1,44 +1,49 @@
 <!--pages/list/detail/detail.wxml-->
 <view class="layer1 detail">
   <view class="pic">
-    <image src="/images/example.jpg" mode="aspectFit"></image>
+    <image src="{{thumb}}" mode="aspectFit"></image>
   </view>
 
   <view class="textline">
     <text class="t1">商品名称</text>
-    <text class="t2">生化危机2重置版</text>
+    <text class="t2">{{name}}</text>
   </view>
 
   <view class="address">
     <text class="iconfont icondizhi" style="color:#96B1C9;"></text>
-    <text>四川</text> .
-    <text>成都</text>
+    <text>{{province}}省</text> .
+    <text>{{city}}市</text>
   </view>
 
   <view class="separator"></view>
 
   <view class="moreDetail">
     <view class="title">详细信息</view>
-    <view class="more">《生化危机2：重制版（ BIOHAZARD RE:2）》是著名日本生存恐怖类电子游戏《生化危机》系列的作品之一，是1998年游戏《生化危机2》的重制版本，Capcom公司开发并发行。将登陆PlayStation 4、Xbox One和PC平台，使用《生化危机7》同款引擎RE Engine打造，经典的生存恐怖游戏正式重生。</view>
+    <view class="more">{{desc}}</view>
   </view>
   <view class="separator"></view>
 
   <view class="textline">
     <text class="t1">发布商</text>
-    <text class="t2">天天打游戏</text>
+    <text class="t2">{{userName}}</text>
   </view>
   <view class="textline">
     <text class="t1">商品价格</text>
-    <text class="t2 iconfont iconjiage">99</text>
+    <text class="t2 iconfont iconjiage">{{price}}</text>
   </view>
   <view class="textline">
     <text class="t1">微信号</text>
-    <text class="t2" style="margin-right:4px;">thl12345</text>
+    <text class="t2" style="margin-right:4px;">{{weixin}}</text>
     <copytext text="{{detail.weixinNumber}}"/>
   </view>
   <view class="textline">
     <text class="t1">手机</text>
-    <text class="t2" style="margin-right:4px;">13587946552</text>
+    <text class="t2" style="margin-right:4px;">{{phone}}</text>
+    <callphone phoneNumber="{{detail.phoneNumber}}"/>
+  </view>
+  <view class="textline">
+    <text class="t1">QQ</text>
+    <text class="t2" style="margin-right:4px;">{{qq}}</text>
     <callphone phoneNumber="{{detail.phoneNumber}}"/>
   </view>
 

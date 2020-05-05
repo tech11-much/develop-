@@ -37,7 +37,38 @@ Page({
             
         } )          
   },
-  
+  onSearch(e){
+    console.log("搜索：",e.detail);
+    var i = e.detail;   //获取输入框输入内容
+      db.collection('goods')
+        .where({
+          productName: db.RegExp({
+            regexp: i,
+            //从搜索栏中获取的value作为规则进行匹配。
+            options: 'i',
+            //大小写不区分
+          })    //匹配输入内容
+        })
+        .get().then( res => {
+            this.setData({
+              lists_study : res.data
+            })
+            
+        } )    
+  },  
+  toDetail(event){
+    console.log("去往详情页面，携带数据id：",event.currentTarget.id);
+   // console.log(e);
+
+    var id = event.currentTarget.id;
+
+    wx.navigateTo({
+      url: '../detail/detail?id=' + id ,
+  });
+  },
+  onCancel(){
+    // wx.navigateBack({delta:999});  //delta非常大，返回首页
+  },
   /**
    * 生命周期函数--监听页面加载
    */

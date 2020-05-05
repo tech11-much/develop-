@@ -3,7 +3,7 @@
 const db = wx.cloud.database()
 const app = getApp()
 const testImgUrl = "https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg";
-const onePageNumber=10;
+const onePageNumber = 10;
 Page({
 
   /**
@@ -11,97 +11,23 @@ Page({
    */
   data: {
     background: [{
-        url: testImgUrl
-      },{
-        url: testImgUrl
-      }
-    ],
+      url: testImgUrl
+    }, {
+      url: testImgUrl
+    }],
     lists_study: [],
     lists_show: [],
     pageNumber: 10
   },
 
   onSearch() {
-    console.log("search");
-    wx.navigateTo({ 
-      url: 'searchResult/searchResult?id=1', 
-      events: { 
-        // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据 
-        acceptDataFromOpenedPage: function(data) { 
-          console.log(data) 
-        }, 
-        someEvent: function(data) { 
-          console.log(data) 
-        } 
-      }, 
-      success: function(res) { 
-        // 通过eventChannel向被打开页面传送数据 
-        res.eventChannel.emit('acceptDataFromOpenerPage', { data: 'test' }) 
-      } 
-    });
-  },
-  toDetail(event){
-    console.log(event);
-   // console.log(e);
-
-    var id = event.currentTarget.id
-
+    console.log("go to search");
     wx.navigateTo({
-      url: './detail/detail?id=' + id ,
-  })
-  },
-  onCancel() {
-    console.log("search");
-  },
-  onClick() {
-    console.log("search");
-  },
-  changeIndicatorDots() {
-    this.setData({
-      indicatorDots: !this.data.indicatorDots
-    })
-  },
-
-  changeAutoplay() {
-    this.setData({
-      autoplay: !this.data.autoplay
-    })
-  },
-
-  intervalChange(e) {
-    this.setData({
-      interval: e.detail.value
-    })
-  },
-
-  durationChange(e) {
-    this.setData({
-      duration: e.detail.value
-    })
-
-    wx.navigateTo({
-      url: 'searchResult/searchResult?id=1',
-      events: {
-        // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据 
-        acceptDataFromOpenedPage: function (data) {
-          console.log(data)
-        },
-        someEvent: function (data) {
-          console.log(data)
-        }
-      },
-      success: function (res) {
-        // 通过eventChannel向被打开页面传送数据 
-        res.eventChannel.emit('acceptDataFromOpenerPage', {
-          data: 'test'
-        })
-      }
+      url: 'searchResult/searchResult',
     });
   },
   toDetail(e) {
-    // console.log(e);
-    // console.log(this);
-    console.log(e.currentTarget.id);
+    console.log('去往详情页面，携带数据id：', e.currentTarget.id);
     let id = e.currentTarget.id;
     wx.navigateTo({
       url: './detail/detail?id=' + id,
@@ -113,7 +39,7 @@ Page({
    */
   onLoad: function (options) {
     this.getListAll();
-    
+
   },
 
   /**
@@ -151,7 +77,7 @@ Page({
     console.log('refresh');
     this.setData({
       lists_study: [],
-      lists_show:[]
+      lists_show: []
     });
     this.getListAll();
     wx.stopPullDownRefresh();
@@ -161,9 +87,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
-    
-
     this.getNewPage();
   },
   test() {
@@ -172,8 +95,8 @@ Page({
   getNewPage() {
     console.log("上拉刷新获取更多列表");
     this.setData({
-      lists_show:this.data.lists_study.slice(0, this.data.pageNumber),
-      pageNumber:this.data.pageNumber+onePageNumber
+      lists_show: this.data.lists_study.slice(0, this.data.pageNumber),
+      pageNumber: this.data.pageNumber + onePageNumber
     });
   },
   /**
@@ -191,20 +114,20 @@ Page({
         console.log(res);
         this.setData({
           lists_study: res.result.data,
-          lists_show:res.result.data.slice(0,onePageNumber-1)
+          lists_show: res.result.data.slice(0, onePageNumber - 1)
         });
       })
       .catch(console.error);
     console.log("刷新列表");
   },
-  getListAll(){
+  getListAll() {
     wx.cloud.callFunction({
-      // 云函数名称
-      name: 'getallData',
-    })
+        // 云函数名称
+        name: 'getallData',
+      })
       .then(res => {
-        console.log(res.result.data.length);
-        for (var i = 0, j = res.result.data.length-1; i < res.result.data.length;i++,j--){
+        console.log('商品个数：',res.result.data.length);
+        for (var i = 0, j = res.result.data.length - 1; i < res.result.data.length; i++, j--) {
           this.data.lists_show[j] = res.result.data[i];
         }
         this.setData({
@@ -212,6 +135,6 @@ Page({
         });
       })
       .catch(console.error)
-    
+
   }
 })

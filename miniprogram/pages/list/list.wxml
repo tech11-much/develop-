@@ -16,17 +16,17 @@
 <!-- <view class="line_white"></view> -->
 <van-tabs color="#5677fc" type="line" style="width:100% margin:0">
   <van-tab title="学习">
-  <view class="card-list" wx:for="{{lists_study}}" wx:key="index" >
-    <view wx:if ="{{item.productType==0}}">
-      <van-card
-        bindtap="toDetail"
-        id="{{item._id}}"
-        price="{{item.productPrice}}"
-        desc="{{item.productMore}}"
-        title="{{item.productName}}"
-        thumb="{{item.userphoto}}"
-        thumb-mode="scaletoFill"
-      /></view>
+    <view class="card-list" wx:for="{{lists_study}}" wx:key="index" >
+      <view wx:if ="{{item.productType==0}}">
+        <van-card
+          bindtap="toDetail"
+          id="{{item._id}}"
+          price="{{item.productPrice}}"
+          desc="{{item.productMore}}"
+          title="{{item.productName}}"
+          thumb="{{item.userphoto}}"
+          thumb-mode="scaletoFill"
+        /></view>
     </view>
   </van-tab>
   <van-tab title="生活">

@@ -1,5 +1,8 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "callphone": "/components/callPhone/callPhone",
+    "copytext": "/components/copytext/copytext"
+    },
   "navigationBarBackgroundColor": "#3785eb",
   "navigationBarTitleText": "详情页面"
 }

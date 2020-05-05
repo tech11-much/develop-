@@ -8,7 +8,8 @@
     "pages/up/up",
     "pages/my/myInfo/myInfo",
     "pages/myPublication/myPublication",
-    "pages/aboutUs/aboutUs"
+    "pages/aboutUs/aboutUs",
+    "components/copytext/copytext"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

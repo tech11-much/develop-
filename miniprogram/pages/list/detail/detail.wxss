@@ -1,8 +1,64 @@
 /* pages/list/detail/detail.wxss */
-.img{
+.layer1 .pic image{
   width: 100%;
+  height: 180px;
 }
-.imagesize{
-  display:flex;
-  justify-content: center;
- }
+
+.layer1 .textline{
+  width: 100%;
+  height: 25px;
+  line-height: 30px;
+  padding: 5px 8px;
+}
+.layer1 .textline .t1{
+  font-size: 14px;
+  font-weight: bold;
+}
+.layer1 .textline .t2{
+  font-size: 14px;
+  color: #888888;
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+.layer1 .address{
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  padding: 5px 8px;
+}
+.layer1 .address text{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.layer1 .separator{
+  border-bottom: 7px solid #E6E6E6;
+}
+
+.layer1 .moreDetail{
+  width: 100%;
+  height: 90px;
+  padding: 5px 8px;
+}
+.layer1 .moreDetail .title{
+  font-size: 14px;
+  font-weight: bold;
+  height: 30px;
+  line-height: 30px;
+}
+.layer1 .moreDetail .more{
+  font-size: 12px;
+  font-weight: bold;
+  height: 49.5px;
+  line-height: 16.5px;
+  color: #747474;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.layer1 .spaceWhite{
+  height: 20px;
+  width: 100%;
+  background-color: #ffffff;
+}

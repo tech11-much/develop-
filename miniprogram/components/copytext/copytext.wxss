@@ -1,0 +1,4 @@
+/* components/copytext/copytext.wxss */
+text{
+  font-size: 8px;
+}

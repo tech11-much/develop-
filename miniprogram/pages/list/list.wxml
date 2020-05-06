@@ -14,7 +14,7 @@
   </swiper>
 </view>
 <!-- <view class="line_white"></view> -->
-<van-tabs color="#5677fc" type="line" style="width:100% margin:0">
+<van-tabs color="#5677fc" type="line" bind:change="onChange" style="width:100% margin:0">
   <van-tab title="学习">
     <view class="card-list" wx:for="{{lists_study}}" wx:key="index" >
       <view wx:if ="{{item.productType==0}}">

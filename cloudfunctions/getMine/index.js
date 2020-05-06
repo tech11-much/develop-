@@ -17,6 +17,7 @@ exports.main = async (event, context) => {
     }).field({
       productName: true,
       _id: true,
+      userphoto : true,
       productPrice: true
     }).get()
     tasks.push(promise)

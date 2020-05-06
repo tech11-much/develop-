@@ -71,17 +71,16 @@ Page({
       name: 'login',
       data: {}
     }).then((res) => {
-      //console.log(res);
-      db.collection('goods').where({
-        _openid: res.result.openid
-      }).field({
-        productName: true,
-        _id: true,
-        productPrice: true
-      }).get().then((res) => {
+      console.log(res);
+      wx.cloud.callFunction({
+        name: 'getMine',
+        data: {
+          openid: res.result.openid
+        }
+      }).then((res) => {
         console.log(res)
         this.setData({
-          goodsMine: res.data
+          goodsMine: res.result.data
         });
       });
     });
@@ -104,6 +103,30 @@ Page({
   deleteGoods : function(e){
     console.log(e);
     let id = e.target.id
+    // db.collection('goods').where({
+    //   _id: id
+    // }).then(res => {
+    //   console.log(res)
+      // wx.cloud.deleteFile({
+      //   fileList: ['res.userphoto']
+      // }).then(res => {
+      //   // handle success
+      //   console.log(res.fileList)
+      // }).catch(error => {
+      //   // handle error
+      // })
+
+    // })
+    //   .catch(console.error)
+    wx.cloud.callFunction({
+      name: 'deleteImg',
+      data : {
+        id : id
+      }
+    }).then((res) => {
+      console.log(res)
+      
+    });
     db.collection('goods').where({
       _id : id
     }).remove().then(res => {

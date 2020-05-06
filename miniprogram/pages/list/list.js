@@ -3,7 +3,7 @@
 const db = wx.cloud.database()
 const app = getApp()
 const testImgUrl = "https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg";
-const onePageNumber = 10;
+const onePageNumber =30;
 Page({
 
   /**
@@ -17,7 +17,8 @@ Page({
     }],
     lists_study: [],
     lists_show: [],
-    pageNumber: 10
+    pageNumber: 50,
+
   },
 
   onSearch() {
@@ -93,11 +94,19 @@ Page({
     console.log("test");
   },
   getNewPage() {
+    var onePageNumber = 30
     console.log("上拉刷新获取更多列表");
     this.setData({
-      lists_show: this.data.lists_study.slice(0, this.data.pageNumber),
+      lists_study: this.data.lists_show.slice(0, this.data.pageNumber-1),
       pageNumber: this.data.pageNumber + onePageNumber
     });
+  },
+  onChange(){
+    this.setData({
+      pageNumber : 30,
+    })
+    this.getListAll()
+    console.log('ddddd')
   },
   /**
    * 用户点击右上角分享
@@ -105,22 +114,23 @@ Page({
   onShareAppMessage: function () {
 
   },
-  getListData() {
-    wx.cloud.callFunction({
-        // 云函数名称
-        name: 'getData',
-      })
-      .then(res => {
-        console.log(res);
-        this.setData({
-          lists_study: res.result.data,
-          lists_show: res.result.data.slice(0, onePageNumber - 1)
-        });
-      })
-      .catch(console.error);
-    console.log("刷新列表");
-  },
+  // getListData() {
+  //   wx.cloud.callFunction({
+  //       // 云函数名称
+  //       name: 'getData',
+  //     })
+  //     .then(res => {
+  //       console.log(res);
+  //       this.setData({
+  //         lists_study: res.result.data,
+  //         lists_show: res.result.data.slice(0, onePageNumber - 1)
+  //       });
+  //     })
+  //     .catch(console.error);
+  //   console.log("刷新列表");
+  // },
   getListAll() {
+    var onePageNumber = 30
     wx.cloud.callFunction({
         // 云函数名称
         name: 'getallData',
@@ -131,7 +141,8 @@ Page({
           this.data.lists_show[j] = res.result.data[i];
         }
         this.setData({
-          lists_study: this.data.lists_show,
+          lists_study: this.data.lists_show.slice(0, this.data.pageNumber - 1),
+          pageNumber: this.data.pageNumber + onePageNumber
         });
       })
       .catch(console.error)

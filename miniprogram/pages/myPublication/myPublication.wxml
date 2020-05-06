@@ -3,23 +3,23 @@
   <view class="itemTitle">
     点击 <text class="iconfont iconshanchu" style="color:#D81E06;"></text> 即可删除发布
   </view>
-
   <view class="list">
-    <view class="items clearfix" wx:for="1" wx:key="index" >
+    <view class="items clearfix" wx:for="{{goodsMine}}" wx:key="index" >
       <view class="fl p1">
         <navigator>
-          <image src="/images/example.jpg" mode="aspectFit"></image>
+          <image src="{{item.userphoto}}" mode="aspectFit"></image>
         </navigator>
       </view>
       <view class="fr p2">
         <view class="txt">
-          <view class="t1">生化危机2重置版</view>
-          <view class="t2 iconfont iconjiage">99</view>
+          <view class="t1">{{item.productName}}</view>
+          <view class="t2 iconfont iconjiage">{{item.productPrice}}</view>
         </view>
         <view class="zancon">
-          <navigator class="iconfont iconshanchu zan" data-id="{{item._id}}" bindtap="deleteGoods" hover="true" hover-class="zanhover"></navigator>
+          <navigator class="iconfont iconshanchu zan" img = "{{item.userphoto}}" id="{{item._id}}" bindtap="deleteGoods" hover="true" hover-class="zanhover"></navigator>
         </view>
       </view>
     </view>
   </view>
-</view>
+ </view>
+  

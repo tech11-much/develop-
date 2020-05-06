@@ -99,6 +99,13 @@
 					"id": -1,
 					"name": "pages/list/searchResult/searchResult",
 					"pathName": "pages/list/searchResult/searchResult",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/myPublication/myPublication",
+					"pathName": "pages/myPublication/myPublication",
 					"scene": null
 				}
 			]

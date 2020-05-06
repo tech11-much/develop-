@@ -80,7 +80,8 @@ Page({
       index: this.data.index,
       nickName: app.userInfo.nickName,
       qqNumber: app.userInfo.qqNumber,
-      weixinNumber: app.userInfo.weixinNumber
+      weixinNumber: app.userInfo.weixinNumber,
+      productMore : ''
     });
   },
 
@@ -164,6 +165,11 @@ Page({
               wx.showToast({
                 title: '发布成功'
               });
+              onshow()
+              // this.setData({
+              //   productName : '',
+              //   productMore : ''
+              // })
             });
           }
         });

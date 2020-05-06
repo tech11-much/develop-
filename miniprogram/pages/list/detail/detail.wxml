@@ -9,11 +9,11 @@
     <text class="t2">{{name}}</text>
   </view>
 
-  <view class="address">
+  <!-- <view class="address">
     <text class="iconfont icondizhi" style="color:#96B1C9;"></text>
     <text>{{province}}省</text> .
     <text>{{city}}市</text>
-  </view>
+  </view> -->
 
   <view class="separator"></view>
 

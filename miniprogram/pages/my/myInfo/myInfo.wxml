@@ -1,36 +1,38 @@
 <!--miniprogram/pages/my/myInfo/myInfo.wxml-->
 <view class="part1 layer1">
-  <navigator class="item1" url="changephoto/changephoto" open-type="navigate">
-    <view class="txtl">
-      <text class="iconfont iconwode2" style="color:#5BBAFC; margin-right:10px;"></text>头像
+  <view class="layer part1">
+  <view class="txt">点击下方头像替换</view>
+  <image bindtap="handleUploadImage" src="{{userPhoto}}" mode="aspectFit"></image>
+  <view>
+    <button disabled="{{disabled}}" class="cun" bindtap="handleBtn">保存头像</button>
+  </view>
+</view>
+  <view class="name layer">
+  <input class="weui-input" type="number" value="{{nickName}}" maxlength="11" placeholder="{{nikename}}" bindinput="handleNickname"/>
+  <view class="click">
+    <view class="cun">
+      <button disabled="{{disabled}}" bindtap="handleBtnName">保存昵称</button>
     </view>
-    <view class="txtr1">
-      <view class="img"><image src="/images/example.jpg" mode="aspectFit"></image></view>
-      <view class="icon iconfont iconiconfontjiantou4" style="width:10px"></view>
+  </view>
+</view>
+
+  <view class="name layer">
+  <input class="weui-input" type="number" value="{{weixinNumber}}" maxlength="11" placeholder="weixinNumber" bindinput="handleText"/>
+  <view class="click">
+    <view>正确填写微信号方便与他人更好地交流</view>
+    <view class="cun">
+      <button disabled="{{disabled}}" bindtap="handleBtnWeixin">保存微信号</button>
     </view>
-  </navigator>
-  <navigator class="item" url="changenickname/changenickname" open-type="navigate">
-    <view class="txtl">
-      <text class="iconfont iconnicheng" style="color:#FC595A; margin-right:10px;"></text>昵称
+  </view>
+</view>
+  <view class="name layer">
+  <input class="weui-input" type="number" value="{{qqNumber}}" maxlength="11" placeholder="qqNumber" bindinput="handleQq"/>
+  <view class="click">
+    <view>正确填写QQ号方便与他人更好地交流</view>
+    <view class="cun">
+      <button disabled="{{disabled}}" bindtap="handleBtnQq">保存QQ号码</button>
     </view>
-    <view class="txtr2">Bruce
-      <text class="icon iconfont iconiconfontjiantou4" style="margin-left:5px;"></text>
-    </view>
-  </navigator>
-  <navigator class="item" url="changeweixin/changeweixin" open-type="navigate">
-    <view class="txtl">
-      <text class="iconfont iconweixin" style="color:#73C051; margin-right:10px;"></text>微信号
-    </view>
-    <view class="txtr2">tyu23132
-      <text class="icon iconfont iconiconfontjiantou4" style="margin-left:5px;"></text>
-    </view>
-  </navigator>
-  <navigator class="item" url="changeQQ/changeQQ" open-type="navigate">
-    <view class="txtl">
-      <text class="iconfont iconVector" style="color:#FE2F5B; margin-right:10px;"></text>QQ号
-    </view>
-    <view class="txtr2">12345456456
-      <text class="icon iconfont iconiconfontjiantou4" style="margin-left:5px;"></text>
-    </view>
-  </navigator>
+  </view>
+</view>
+
 </view>

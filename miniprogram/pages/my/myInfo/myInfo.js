@@ -91,6 +91,17 @@ Page({
     });
   },
   handleBtn(){
+    db.collection('user').doc(app.userInfo._id).get().then((res) => {
+      console.log(res.data.userPhoto)
+      wx.cloud.deleteFile({
+        fileList: [res.data.userPhoto]
+      }).then(res => {
+        // handle success
+        console.log(res.fileList)
+      }).catch(error => {
+        // handle error
+      })
+    });
     wx.showLoading({
       title: '上传中',
     });
